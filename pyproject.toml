@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "english-mingle-backend"
+version = "0.1.0"
+description = ""
+authors = ["Donghyeok Lee <donghyukleee@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "english_mingle_backend"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^4.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
