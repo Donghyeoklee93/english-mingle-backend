@@ -35,6 +35,7 @@ CUSTOM_APPS = [
     "events.apps.EventsConfig",
     "users.apps.UsersConfig",
     "classes.apps.ClassesConfig",
+    "challenges.apps.ChallengesConfig",
 ]
 
 SYSTEM_APPS = [
