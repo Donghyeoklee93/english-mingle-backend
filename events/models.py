@@ -18,5 +18,16 @@ class Event(models.Model):
     description = models.TextField()
     address = models.CharField(max_length=150)
 
+    subject = models.ManyToManyField(
+        "classes.Subject",
+    )
+
+    level = models.ForeignKey(
+        "levels.Level",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+
     def __str__(self):
         return self.name

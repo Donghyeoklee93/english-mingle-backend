@@ -29,8 +29,15 @@ class Challenge(CommonModel):
     start = models.DateTimeField()
     end = models.DateTimeField()
 
-    subjects = models.ManyToManyField(
+    subject = models.ManyToManyField(
         "classes.Subject",
+    )
+
+    level = models.ForeignKey(
+        "levels.Level",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
     )
 
     def __str__(self) -> str:

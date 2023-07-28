@@ -16,9 +16,10 @@ class ClassAdmin(admin.ModelAdmin):
         "price",
         "kind",
         "tutor",
-        "subjects",
+        "subject",
         "created_at",
         "updated_at",
+        "level",
     )
 
 

@@ -16,6 +16,7 @@ class EventAdmin(admin.ModelAdmin):
 
     list_filter = [
         "price",
+        "level",
     ]
 
     search_fields = [

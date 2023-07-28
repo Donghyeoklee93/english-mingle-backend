@@ -12,4 +12,7 @@ class ChallengeAdmin(admin.ModelAdmin):
         "created_at",
     )
 
-    list_filter = ("subjects",)
+    list_filter = (
+        "subject",
+        "level",
+    )
