@@ -31,8 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 CUSTOM_APPS = [
+    "common.apps.CommonConfig",
     "events.apps.EventsConfig",
     "users.apps.UsersConfig",
+    "classes.apps.ClassesConfig",
 ]
 
 SYSTEM_APPS = [
