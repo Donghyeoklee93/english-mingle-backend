@@ -38,6 +38,7 @@ CUSTOM_APPS = [
     "challenges.apps.ChallengesConfig",
     "levels.apps.LevelsConfig",
     "reviews.apps.ReviewsConfig",
+    "bookings.apps.BookingsConfig",
 ]
 
 SYSTEM_APPS = [
