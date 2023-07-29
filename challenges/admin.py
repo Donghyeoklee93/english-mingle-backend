@@ -19,6 +19,7 @@ class ChallengeAdmin(admin.ModelAdmin):
         "start",
         "end",
         "created_at",
+        "rating",
     )
 
     list_filter = (

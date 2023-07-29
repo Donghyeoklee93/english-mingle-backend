@@ -31,3 +31,13 @@ class Event(models.Model):
 
     def __str__(self):
         return self.name
+
+    def rating(events):
+        count = events.reviews.count()
+        if count == 0:
+            return "No Review"
+        else:
+            total_rating = 0
+            for review in events.reviews.all().values("rating"):
+                total_rating += review["rating"]
+            return round(total_rating / count, 1)

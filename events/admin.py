@@ -21,6 +21,7 @@ class EventAdmin(admin.ModelAdmin):
         "price",
         # "description",
         "address",
+        "rating",
     ]
 
     list_filter = [

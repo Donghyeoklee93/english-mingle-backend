@@ -42,3 +42,13 @@ class Challenge(CommonModel):
 
     def __str__(self) -> str:
         return self.name
+
+    def rating(challenges):
+        count = challenges.reviews.count()
+        if count == 0:
+            return "No Review"
+        else:
+            total_rating = 0
+            for review in challenges.reviews.all().values("rating"):
+                total_rating += review["rating"]
+            return round(total_rating / count, 1)
