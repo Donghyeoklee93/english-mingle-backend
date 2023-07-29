@@ -32,9 +32,9 @@ ALLOWED_HOSTS = []
 
 CUSTOM_APPS = [
     "common.apps.CommonConfig",
-    "events.apps.EventsConfig",
+    "offlines.apps.OfflinesConfig",
     "users.apps.UsersConfig",
-    "onlineClasses.apps.OnlineclassesConfig",
+    "onlines.apps.OnlinesConfig",
     "challenges.apps.ChallengesConfig",
     "levels.apps.LevelsConfig",
     "reviews.apps.ReviewsConfig",

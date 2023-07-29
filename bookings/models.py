@@ -7,8 +7,8 @@ class Booking(CommonModel):
     """Booking Model Definition"""
 
     class BookingKindChoices(models.TextChoices):
-        CLASS = "CLASS", "CLASS"
-        EVENT = "EVENT", "EVENT"
+        ONLINE = "ONLINE", "ONLINE"
+        OFFLINE = "OFFLINE", "OFFLINE"
         CHALLENGE = "CHALLENGE", "CHALLENGE"
 
     kind = models.CharField(
@@ -20,15 +20,15 @@ class Booking(CommonModel):
         on_delete=models.CASCADE,
         related_name="bookings",
     )
-    onlineclass = models.ForeignKey(
-        "onlineClasses.Onlineclass",
+    online = models.ForeignKey(
+        "onlines.Online",
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
         related_name="bookings",
     )
-    event = models.ForeignKey(
-        "events.Event",
+    offline = models.ForeignKey(
+        "offlines.Offline",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
@@ -50,7 +50,7 @@ class Booking(CommonModel):
         null=True,
         blank=True,
     )
-    event_time = models.DateTimeField(
+    online_offline_time = models.DateTimeField(
         null=True,
         blank=True,
     )

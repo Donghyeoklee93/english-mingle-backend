@@ -2,7 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class Event(models.Model):
+class Offline(models.Model):
     name = models.CharField(
         max_length=150,
         verbose_name="student name",
@@ -19,7 +19,7 @@ class Event(models.Model):
     address = models.CharField(max_length=150)
 
     subject = models.ManyToManyField(
-        "onlineClasses.Subject",
+        "onlines.Subject",
     )
 
     level = models.ForeignKey(
@@ -29,15 +29,18 @@ class Event(models.Model):
         on_delete=models.SET_NULL,
     )
 
+    class Meta:
+        verbose_name_plural = "offline_classes"
+
     def __str__(self):
         return self.name
 
-    def rating(events):
-        count = events.reviews.count()
+    def rating(offlineClass):
+        count = offlineClass.reviews.count()
         if count == 0:
             return "No Review"
         else:
             total_rating = 0
-            for review in events.reviews.all().values("rating"):
+            for review in offlineClass.reviews.all().values("rating"):
                 total_rating += review["rating"]
             return round(total_rating / count, 1)

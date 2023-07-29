@@ -9,12 +9,12 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('onlines', '0001_initial'),
-        ('challenges', '0001_initial'),
+        ('offlines', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='challenge',
+            model_name='offline',
             name='subject',
             field=models.ManyToManyField(to='onlines.subject'),
         ),

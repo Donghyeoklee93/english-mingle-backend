@@ -12,15 +12,15 @@ class Review(CommonModel):
         related_name="reviews",
     )
 
-    classes = models.ForeignKey(
-        "onlineClasses.OnlineClass",
+    online = models.ForeignKey(
+        "onlines.Online",
         null=True,
         blank=True,
         on_delete=models.CASCADE,
         related_name="reviews",
     )
-    event = models.ForeignKey(
-        "events.Event",
+    offline = models.ForeignKey(
+        "offlines.Offline",
         blank=True,
         null=True,
         on_delete=models.CASCADE,

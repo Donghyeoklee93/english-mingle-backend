@@ -9,14 +9,14 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('bookings', '0003_initial'),
         ('onlines', '0001_initial'),
+        ('medias', '0002_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='booking',
+            model_name='photo',
             name='online',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='bookings', to='onlines.online'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='photos', to='onlines.online'),
         ),
     ]

@@ -1,17 +1,17 @@
 from django.contrib import admin
-from .models import Event
+from .models import Offline
 
 # Register your models here.
 
 
 @admin.action(description="Set all price to zero")
-def reset_price(model_admin, request, events):
-    for event in events:
-        event.price = 0
-        event.save()
+def reset_price(model_admin, request, offlines):
+    for offline in offlines:
+        offline.price = 0
+        offline.save()
 
 
-@admin.register(Event)
+@admin.register(Offline)
 class EventAdmin(admin.ModelAdmin):
     actions = (reset_price,)
 

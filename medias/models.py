@@ -7,15 +7,15 @@ class Photo(CommonModel):
     description = models.CharField(
         max_length=140,
     )
-    onlineclass = models.ForeignKey(
-        "onlineClasses.Onlineclass",
+    online = models.ForeignKey(
+        "onlines.Online",
         on_delete=models.CASCADE,
         null=True,
         blank=True,
         related_name="photos",
     )
-    event = models.ForeignKey(
-        "events.Event",
+    Offline = models.ForeignKey(
+        "offlines.Offline",
         on_delete=models.CASCADE,
         null=True,
         blank=True,
@@ -36,8 +36,8 @@ class Photo(CommonModel):
 
 class Video(CommonModel):
     file = models.URLField()
-    event = models.OneToOneField(
-        "events.Event",
+    offline = models.OneToOneField(
+        "offlines.Offline",
         on_delete=models.CASCADE,
         related_name="video",
     )

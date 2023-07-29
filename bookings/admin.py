@@ -7,12 +7,12 @@ class BookingAdmin(admin.ModelAdmin):
     list_display = (
         "kind",
         "user",
-        "onlineclass",
-        "event",
+        "online",
+        "offline",
         "challenge",
         "time_from",
         "time_to",
-        "event_time",
+        "online_offline_time",
     )
 
     list_filter = ("kind",)

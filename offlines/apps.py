@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class OnlineclassesConfig(AppConfig):
+class OfflinesConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'onlineClasses'
+    name = 'offlines'

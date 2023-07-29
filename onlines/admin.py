@@ -1,15 +1,15 @@
 from django.contrib import admin
-from .models import OnlineClass, Subject
+from .models import Online, Subject
 
 
 @admin.action(description="Set all price to zero")
-def reset_price(model_admin, request, onlineClasses):
-    for onlineClass in onlineClasses:
-        onlineClass.price = 0
-        onlineClass.save()
+def reset_price(model_admin, request, onlines):
+    for online in onlines:
+        online.price = 0
+        online.save()
 
 
-@admin.register(OnlineClass)
+@admin.register(Online)
 class ClassAdmin(admin.ModelAdmin):
     actions = (reset_price,)
 

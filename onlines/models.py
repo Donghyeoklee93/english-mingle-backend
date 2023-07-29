@@ -4,7 +4,7 @@ from common.models import CommonModel
 # Create your models here.
 
 
-class OnlineClass(CommonModel):
+class Online(CommonModel):
     class TimeChoices(models.TextChoices):
         TIME20 = ("20MINS", "20MINS")
         TIME40 = ("40MINS", "40MINS")
@@ -30,7 +30,7 @@ class OnlineClass(CommonModel):
     )
 
     subject = models.ManyToManyField(
-        "onlineClasses.Subject",
+        "onlines.Subject",
         related_name="classes",
     )
 
