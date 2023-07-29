@@ -40,6 +40,7 @@ CUSTOM_APPS = [
     "reviews.apps.ReviewsConfig",
     "bookings.apps.BookingsConfig",
     "medias.apps.MediasConfig",
+    "messengers.apps.MessengersConfig",
 ]
 
 SYSTEM_APPS = [
