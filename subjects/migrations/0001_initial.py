@@ -12,15 +12,13 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Booking',
+            name='Subject',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('kind', models.CharField(choices=[('ONLINE', 'ONLINE'), ('OFFLINE', 'OFFLINE'), ('CHALLENGE', 'CHALLENGE')], max_length=15)),
-                ('time_from', models.DateField(blank=True, null=True)),
-                ('time_to', models.DateField(blank=True, null=True)),
-                ('online_offline_time', models.DateTimeField(blank=True, null=True)),
+                ('name', models.CharField(max_length=150)),
+                ('description', models.CharField(blank=True, max_length=150, null=True)),
             ],
             options={
                 'abstract': False,

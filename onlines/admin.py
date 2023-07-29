@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Online, Subject
+from .models import Online
 
 
 @admin.action(description="Set all price to zero")
@@ -36,18 +36,3 @@ class ClassAdmin(admin.ModelAdmin):
         "name",
         "^tutor__username",
     ]
-
-
-@admin.register(Subject)
-class SubjectAdmin(admin.ModelAdmin):
-    list_display = (
-        "name",
-        "description",
-        "created_at",
-        "updated_at",
-    )
-
-    readonly_fields = (
-        "created_at",
-        "updated_at",
-    )

@@ -30,7 +30,7 @@ class Challenge(CommonModel):
     end = models.DateTimeField()
 
     subject = models.ManyToManyField(
-        "onlines.Subject",
+        "subjects.Subject",
     )
 
     level = models.ForeignKey(

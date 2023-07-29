@@ -30,7 +30,7 @@ class Online(CommonModel):
     )
 
     subject = models.ManyToManyField(
-        "onlines.Subject",
+        "subjects.Subject",
         related_name="classes",
     )
 
@@ -56,20 +56,3 @@ class Online(CommonModel):
             for review in onlineClass.reviews.all().values("rating"):
                 total_rating += review["rating"]
             return round(total_rating / count, 1)
-
-
-class Subject(CommonModel):
-
-    """Subject Model Definition"""
-
-    name = models.CharField(
-        max_length=150,
-    )
-    description = models.CharField(
-        max_length=150,
-        null=True,
-        blank=True,
-    )
-
-    def __str__(self) -> str:
-        return self.name

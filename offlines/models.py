@@ -19,7 +19,7 @@ class Offline(models.Model):
     address = models.CharField(max_length=150)
 
     subject = models.ManyToManyField(
-        "onlines.Subject",
+        "subjects.Subject",
     )
 
     level = models.ForeignKey(

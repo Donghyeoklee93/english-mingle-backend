@@ -29,6 +29,13 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+THIRD_PARTY_APPS = [
+    "rest_framework",
+    # "rest_framework.authtoken",
+    # "strawberry.django",
+    # "corsheaders",
+]
+
 
 CUSTOM_APPS = [
     "common.apps.CommonConfig",
@@ -37,6 +44,7 @@ CUSTOM_APPS = [
     "onlines.apps.OnlinesConfig",
     "challenges.apps.ChallengesConfig",
     "levels.apps.LevelsConfig",
+    "subjects.apps.SubjectsConfig",
     "reviews.apps.ReviewsConfig",
     "bookings.apps.BookingsConfig",
     "medias.apps.MediasConfig",
@@ -52,7 +60,7 @@ SYSTEM_APPS = [
     "django.contrib.staticfiles",
 ]
 
-INSTALLED_APPS = SYSTEM_APPS + CUSTOM_APPS
+INSTALLED_APPS = SYSTEM_APPS + THIRD_PARTY_APPS + CUSTOM_APPS
 
 
 MIDDLEWARE = [
