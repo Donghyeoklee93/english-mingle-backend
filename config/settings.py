@@ -39,6 +39,7 @@ CUSTOM_APPS = [
     "levels.apps.LevelsConfig",
     "reviews.apps.ReviewsConfig",
     "bookings.apps.BookingsConfig",
+    "medias.apps.MediasConfig",
 ]
 
 SYSTEM_APPS = [
