@@ -34,7 +34,7 @@ CUSTOM_APPS = [
     "common.apps.CommonConfig",
     "events.apps.EventsConfig",
     "users.apps.UsersConfig",
-    "classes.apps.ClassesConfig",
+    "onlineClasses.apps.OnlineclassesConfig",
     "challenges.apps.ChallengesConfig",
     "levels.apps.LevelsConfig",
     "reviews.apps.ReviewsConfig",

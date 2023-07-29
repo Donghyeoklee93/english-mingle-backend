@@ -7,7 +7,7 @@ class BookingAdmin(admin.ModelAdmin):
     list_display = (
         "kind",
         "user",
-        "classes",
+        "onlineclass",
         "event",
         "challenge",
         "time_from",

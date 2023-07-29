@@ -13,7 +13,7 @@ class Review(CommonModel):
     )
 
     classes = models.ForeignKey(
-        "classes.Class",
+        "onlineClasses.OnlineClass",
         null=True,
         blank=True,
         on_delete=models.CASCADE,

@@ -1,14 +1,24 @@
 from django.contrib import admin
-from .models import Class, Subject
+from .models import OnlineClass, Subject
 
 
-@admin.register(Class)
+@admin.action(description="Set all price to zero")
+def reset_price(model_admin, request, onlineClasses):
+    for onlineClass in onlineClasses:
+        onlineClass.price = 0
+        onlineClass.save()
+
+
+@admin.register(OnlineClass)
 class ClassAdmin(admin.ModelAdmin):
+    actions = (reset_price,)
+
     list_display = (
         "name",
         "price",
         "kind",
         "tutor",
+        "rating",
     )
 
     list_filter = (
@@ -21,6 +31,11 @@ class ClassAdmin(admin.ModelAdmin):
         "updated_at",
         "level",
     )
+
+    search_fields = [
+        "name",
+        "^tutor__username",
+    ]
 
 
 @admin.register(Subject)

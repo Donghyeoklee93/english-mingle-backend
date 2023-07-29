@@ -20,8 +20,8 @@ class Booking(CommonModel):
         on_delete=models.CASCADE,
         related_name="bookings",
     )
-    classes = models.ForeignKey(
-        "classes.Class",
+    onlineclass = models.ForeignKey(
+        "onlineClasses.Onlineclass",
         on_delete=models.SET_NULL,
         null=True,
         blank=True,

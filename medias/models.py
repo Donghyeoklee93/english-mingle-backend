@@ -7,8 +7,8 @@ class Photo(CommonModel):
     description = models.CharField(
         max_length=140,
     )
-    classes = models.ForeignKey(
-        "classes.Class",
+    onlineclass = models.ForeignKey(
+        "onlineClasses.Onlineclass",
         on_delete=models.CASCADE,
         null=True,
         blank=True,

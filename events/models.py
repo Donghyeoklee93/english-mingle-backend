@@ -19,7 +19,7 @@ class Event(models.Model):
     address = models.CharField(max_length=150)
 
     subject = models.ManyToManyField(
-        "classes.Subject",
+        "onlineClasses.Subject",
     )
 
     level = models.ForeignKey(

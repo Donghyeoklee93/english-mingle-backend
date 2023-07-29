@@ -4,7 +4,7 @@ from common.models import CommonModel
 # Create your models here.
 
 
-class Class(CommonModel):
+class OnlineClass(CommonModel):
     class TimeChoices(models.TextChoices):
         TIME20 = ("20MINS", "20MINS")
         TIME40 = ("40MINS", "40MINS")
@@ -30,7 +30,7 @@ class Class(CommonModel):
     )
 
     subject = models.ManyToManyField(
-        "classes.Subject",
+        "onlineClasses.Subject",
         related_name="classes",
     )
 
@@ -45,7 +45,17 @@ class Class(CommonModel):
         return self.name
 
     class Meta:
-        verbose_name_plural = "Classes"
+        verbose_name_plural = "online_classes"
+
+    def rating(onlineClass):
+        count = onlineClass.reviews.count()
+        if count == 0:
+            return "No Review"
+        else:
+            total_rating = 0
+            for review in onlineClass.reviews.all().values("rating"):
+                total_rating += review["rating"]
+            return round(total_rating / count, 1)
 
 
 class Subject(CommonModel):
