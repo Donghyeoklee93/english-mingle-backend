@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from .models import User
+from .serializers import MessengerSerializer
+from rest_framework.viewsets import ModelViewSet
 
-# Create your views here.
+
+class UserViewSet(ModelViewSet):
+    serializer_class = MessengerSerializer
+    queryset = User.objects.all()
