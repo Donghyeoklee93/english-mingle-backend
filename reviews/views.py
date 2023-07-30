@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from .models import Review
+from .serializers import ReviewSerializer
+from rest_framework.viewsets import ModelViewSet
 
-# Create your views here.
+
+class ReviewViewSet(ModelViewSet):
+    serializer_class = ReviewSerializer
+    queryset = Review.objects.all()
