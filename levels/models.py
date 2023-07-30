@@ -3,9 +3,6 @@ from common.models import CommonModel
 
 
 class Level(CommonModel):
-
-    """Room or Experience Category"""
-
     class LevelKindChoices(models.TextChoices):
         BEGINNER = "BEGINNER", "BEGINNER"
         INTERMIDATE = "INTERMIDATE", "INTERMIDATE"
