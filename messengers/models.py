@@ -2,19 +2,6 @@ from django.db import models
 from common.models import CommonModel
 
 
-class ChattingRoom(CommonModel):
-
-    """Room Model Definition"""
-
-    users = models.ManyToManyField(
-        "users.User",
-        related_name="chat_rooms",
-    )
-
-    def __str__(self) -> str:
-        return "Chatting Room"
-
-
 class Messenger(CommonModel):
 
     """Messenger Model Definition"""
@@ -35,3 +22,13 @@ class Messenger(CommonModel):
 
     def __str__(self) -> str:
         return f"{self.user} says: {self.text}"
+
+
+class ChattingRoom(CommonModel):
+    users = models.ManyToManyField(
+        "users.User",
+        related_name="chat_rooms",
+    )
+
+    def __str__(self) -> str:
+        return "Chatting Room"

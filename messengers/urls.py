@@ -21,4 +21,23 @@ urlpatterns = [
             },
         ),
     ),
+    path(
+        "<int:pk>/chattingrooms",
+        views.ChattingRoomViewSet.as_view(
+            {
+                "get": "list",
+                "post": "create",
+            }
+        ),
+    ),
+    path(
+        "chattingrooms/<int:pk>",
+        views.ChattingRoomViewSet.as_view(
+            {
+                "get": "retrieve",
+                "put": "partial_update",
+                "delete": "destroy",
+            },
+        ),
+    ),
 ]

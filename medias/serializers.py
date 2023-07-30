@@ -3,22 +3,28 @@ from rest_framework import serializers
 from .models import Photo, Video
 
 
-class MediaSerializer(serializers.ModelSerializer):
+class PhotoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Photo
         fields = (
+            "pk",
             "file",
             "description",
             "online",
             "Offline",
             "challenge",
+            "created_at",
+            "updated_at",
         )
 
 
-# class MediaSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Video
-#         fields = (
-#             "file",
-#             "offline",
-#         )
+class VideoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Video
+        fields = (
+            "pk",
+            "file",
+            "offline",
+            "created_at",
+            "updated_at",
+        )

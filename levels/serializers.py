@@ -10,4 +10,6 @@ class LevelSerializer(serializers.ModelSerializer):
             "pk",
             "name",
             "kind",
+            "created_at",
+            "updated_at",
         )

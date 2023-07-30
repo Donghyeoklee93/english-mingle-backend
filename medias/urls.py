@@ -3,8 +3,8 @@ from . import views
 
 urlpatterns = [
     path(
-        "",
-        views.MediaViewSet.as_view(
+        "photoes",
+        views.PhotoViewSet.as_view(
             {
                 "get": "list",
                 "post": "create",
@@ -12,8 +12,27 @@ urlpatterns = [
         ),
     ),
     path(
-        "<int:pk>",
-        views.MediaViewSet.as_view(
+        "photoes/<int:pk>",
+        views.PhotoViewSet.as_view(
+            {
+                "get": "retrieve",
+                "put": "partial_update",
+                "delete": "destroy",
+            },
+        ),
+    ),
+    path(
+        "videos",
+        views.VideoViewSet.as_view(
+            {
+                "get": "list",
+                "post": "create",
+            }
+        ),
+    ),
+    path(
+        "videos/<int:pk>",
+        views.VideoViewSet.as_view(
             {
                 "get": "retrieve",
                 "put": "partial_update",
