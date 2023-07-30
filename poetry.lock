@@ -39,6 +39,14 @@ django = ">=3.0"
 pytz = "*"
 
 [[package]]
+name = "package"
+version = "0.1.1"
+description = "package is a package to package your package"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "Pillow"
 version = "10.0.0"
 description = "Python Imaging Library (Fork)"
@@ -82,7 +90,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.11"
-content-hash = "816af1ffb069b20365aae977248f96c30e0281bfa2c238767719104a50c88945"
+content-hash = "2a3964c020631b99d1fa1cb7b0cf83d74af23d4dac130a0a43556c82f526454e"
 
 [metadata.files]
 asgiref = [
@@ -96,6 +104,9 @@ Django = [
 djangorestframework = [
     {file = "djangorestframework-3.14.0-py3-none-any.whl", hash = "sha256:eb63f58c9f218e1a7d064d17a70751f528ed4e1d35547fdade9aaf4cd103fd08"},
     {file = "djangorestframework-3.14.0.tar.gz", hash = "sha256:579a333e6256b09489cbe0a067e66abe55c6595d8926be6b99423786334350c8"},
+]
+package = [
+    {file = "package-0.1.1.tar.gz", hash = "sha256:01eee19a56a936bd63222f0a3c531fcdba37b5ad1bd833b960d62fb960b4955e"},
 ]
 Pillow = [
     {file = "Pillow-10.0.0-cp310-cp310-macosx_10_10_x86_64.whl", hash = "sha256:1f62406a884ae75fb2f818694469519fb685cc7eaff05d3451a9ebe55c646891"},

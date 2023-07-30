@@ -1,13 +1,13 @@
 from dataclasses import fields
 from rest_framework import serializers
-from .models import Level
+from .models import Subject
 
 
-class LevelSerializer(serializers.ModelSerializer):
+class SubjectSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Level
+        model = Subject
         fields = (
             "pk",
             "name",
-            "kind",
+            "description",
         )
