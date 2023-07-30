@@ -14,4 +14,5 @@ urlpatterns = [
     path("api/v1/medias/", include("medias.urls")),
     path("api/v1/messengers/", include("messengers.urls")),
     path("api/v1/users/", include("users.urls")),
+    path("api/v1/bookings/", include("bookings.urls")),
 ]
