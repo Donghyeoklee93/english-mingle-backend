@@ -9,4 +9,5 @@ urlpatterns = [
     path("api/v1/levels/", include("levels.urls")),
     path("api/v1/subjects/", include("subjects.urls")),
     path("api/v1/onlines/", include("onlines.urls")),
+    path("api/v1/offlines/", include("offlines.urls")),
 ]

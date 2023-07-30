@@ -1,17 +1,16 @@
 from dataclasses import fields
 from rest_framework import serializers
-from .models import Online
+from .models import Offline
 
 
-class OnlineSerializer(serializers.ModelSerializer):
+class OfflineSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Online
+        model = Offline
         fields = (
             "name",
             "tutor",
             "price",
             "description",
-            "kind",
             "subject",
             "level",
         )
