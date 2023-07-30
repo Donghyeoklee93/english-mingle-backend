@@ -11,4 +11,5 @@ urlpatterns = [
     path("api/v1/onlines/", include("onlines.urls")),
     path("api/v1/offlines/", include("offlines.urls")),
     path("api/v1/challenges/", include("challenges.urls")),
+    path("api/v1/medias/", include("medias.urls")),
 ]
