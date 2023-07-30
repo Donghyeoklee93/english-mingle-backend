@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from .models import ChattingRoom
+from .serializers import MessengerSerializer
+from rest_framework.viewsets import ModelViewSet
 
-# Create your views here.
+
+class MessengerViewSet(ModelViewSet):
+    serializer_class = MessengerSerializer
+    queryset = ChattingRoom.objects.all()
