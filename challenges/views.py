@@ -6,11 +6,6 @@ from .models import Challenge
 from .serializers import ChallengeListSerializer, ChallengeDetailSerializer
 
 
-# class ChallengeViewSet(ModelViewSet):
-#     serializer_class = ChallengeSerializer
-#     queryset = Challenge.objects.all()
-
-
 class Challenges(APIView):
     def get(self, request):
         all_challenges = Challenge.objects.all()
@@ -41,3 +36,8 @@ class ChallengeDetail(APIView):
         Challenge = self.get_object(pk)
         serializer = ChallengeDetailSerializer(Challenge)
         return Response(serializer.data)
+
+
+# class ChallengeViewSet(ModelViewSet):
+#     serializer_class = ChallengeSerializer
+#     queryset = Challenge.objects.all()
