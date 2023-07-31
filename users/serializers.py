@@ -1,9 +1,21 @@
-from dataclasses import fields
 from rest_framework import serializers
 from .models import User
 
+from rest_framework.serializers import ModelSerializer
+from .models import User
 
-class MessengerSerializer(serializers.ModelSerializer):
+
+class TinyUserSerializer(ModelSerializer):
+    class Meta:
+        model = User
+        fields = (
+            "name",
+            "avatar",
+            "username",
+        )
+
+
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = (

@@ -7,9 +7,9 @@ class LevelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Level
         fields = (
-            "pk",
+            # "pk",
             "name",
             "kind",
-            "created_at",
-            "updated_at",
+            # "created_at",
+            # "updated_at",
         )

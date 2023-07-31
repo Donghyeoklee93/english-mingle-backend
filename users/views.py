@@ -1,8 +1,8 @@
 from .models import User
-from .serializers import MessengerSerializer
+from .serializers import UserSerializer
 from rest_framework.viewsets import ModelViewSet
 
 
 class UserViewSet(ModelViewSet):
-    serializer_class = MessengerSerializer
+    serializer_class = UserSerializer
     queryset = User.objects.all()
