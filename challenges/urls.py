@@ -4,23 +4,7 @@ from . import views
 urlpatterns = [
     path("", views.Challenges.as_view()),
     path("<int:pk>", views.ChallengeDetail.as_view()),
-    # path(
-    #     "",
-    #     views.ChallengeViewSet.as_view(
-    #         {
-    #             "get": "list",
-    #             "post": "create",
-    #         }
-    #     ),
-    # ),
-    # path(
-    #     "<int:pk>",
-    #     views.ChallengeViewSet.as_view(
-    #         {
-    #             "get": "retrieve",
-    #             "put": "partial_update",
-    #             "delete": "destroy",
-    #         },
-    #     ),
-    # ),
+    path("<int:pk>/reviews", views.ChallengeReviews.as_view()),
+    path("<int:pk>/photos", views.ChallengePhotos.as_view()),
+    path("<int:pk>/bookings", views.ChallengeBookings.as_view()),
 ]

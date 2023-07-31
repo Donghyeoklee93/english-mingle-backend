@@ -3,23 +3,12 @@ from . import views
 
 urlpatterns = [
     path(
-        "photoes",
-        views.PhotoViewSet.as_view(
-            {
-                "get": "list",
-                "post": "create",
-            }
-        ),
+        "photos/get-url",
+        views.GetUploadURL.as_view(),
     ),
     path(
-        "photoes/<int:pk>",
-        views.PhotoViewSet.as_view(
-            {
-                "get": "retrieve",
-                "put": "partial_update",
-                "delete": "destroy",
-            },
-        ),
+        "photos/<int:pk>",
+        views.PhotoDetail.as_view(),
     ),
     path(
         "videos",

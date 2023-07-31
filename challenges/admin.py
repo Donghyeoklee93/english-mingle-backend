@@ -23,7 +23,7 @@ class ChallengeAdmin(admin.ModelAdmin):
     )
 
     list_filter = (
-        "subject",
+        "subjects",
         "level",
     )
 

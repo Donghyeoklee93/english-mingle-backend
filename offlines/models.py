@@ -18,7 +18,7 @@ class Offline(models.Model):
     description = models.TextField()
     address = models.CharField(max_length=150)
 
-    subject = models.ManyToManyField(
+    subjects = models.ManyToManyField(
         "subjects.Subject",
     )
 

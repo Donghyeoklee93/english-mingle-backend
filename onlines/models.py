@@ -29,7 +29,7 @@ class Online(CommonModel):
         choices=TimeChoices.choices,
     )
 
-    subject = models.ManyToManyField(
+    subjects = models.ManyToManyField(
         "subjects.Subject",
         related_name="classes",
     )

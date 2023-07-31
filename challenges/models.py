@@ -29,7 +29,7 @@ class Challenge(CommonModel):
     start = models.DateTimeField()
     end = models.DateTimeField()
 
-    subject = models.ManyToManyField(
+    subjects = models.ManyToManyField(
         "subjects.Subject",
     )
 

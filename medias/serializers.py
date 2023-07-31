@@ -11,7 +11,7 @@ class PhotoSerializer(serializers.ModelSerializer):
             "file",
             "description",
             "online",
-            "Offline",
+            "offline",
             "challenge",
             "created_at",
             "updated_at",

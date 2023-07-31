@@ -26,7 +26,7 @@ class ClassAdmin(admin.ModelAdmin):
         "price",
         "kind",
         "tutor",
-        "subject",
+        "subjects",
         "created_at",
         "updated_at",
         "level",

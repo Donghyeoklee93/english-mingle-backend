@@ -7,10 +7,11 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = (
-            "user",
-            "online",
-            "offline",
-            "challenge",
+            "pk",
+            # "user",
+            # "online",
+            # "offline",
+            # "challenge",
             "textArea",
             "rating",
         )

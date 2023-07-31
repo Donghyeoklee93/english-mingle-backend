@@ -14,7 +14,7 @@ class Photo(CommonModel):
         blank=True,
         related_name="photos",
     )
-    Offline = models.ForeignKey(
+    offline = models.ForeignKey(
         "offlines.Offline",
         on_delete=models.CASCADE,
         null=True,
