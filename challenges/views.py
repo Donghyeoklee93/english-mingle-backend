@@ -1,24 +1,30 @@
-from rest_framework.views import APIView
 from django.db import transaction
+from django.conf import settings
+from django.utils import timezone
+
+
 from rest_framework.status import HTTP_204_NO_CONTENT
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.views import APIView
 from rest_framework.exceptions import (
     NotFound,
     NotAuthenticated,
     ParseError,
     PermissionDenied,
 )
-from .models import Challenge
-from subjects.models import Subject
+
+
 from levels.models import Level
-from .serializers import ChallengeListSerializer, ChallengeDetailSerializer
+from subjects.models import Subject
 from reviews.serializers import ReviewSerializer
-from django.conf import settings
 from medias.serializers import PhotoSerializer
-from django.utils import timezone
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from bookings.models import Booking
 from bookings.serializers import BookingSerializer, CreateChallengeBookingSerializer
+
+
+from .models import Challenge
+from .serializers import ChallengeListSerializer, ChallengeDetailSerializer
 
 
 class Challenges(APIView):
@@ -36,7 +42,6 @@ class Challenges(APIView):
     def post(self, request):
         serializer = ChallengeDetailSerializer(data=request.data)
         if serializer.is_valid():
-            print(request.data)
             level_pk = request.data.get("level")
             if not level_pk:
                 raise ParseError("Level is required.")
@@ -128,11 +133,6 @@ class ChallengeDetail(APIView):
             raise PermissionDenied
         challenge.delete()
         return Response(status=HTTP_204_NO_CONTENT)
-
-
-# class ChallengeViewSet(ModelViewSet):
-#     serializer_class = ChallengeSerializer
-#     queryset = Challenge.objects.all()
 
 
 class ChallengeReviews(APIView):

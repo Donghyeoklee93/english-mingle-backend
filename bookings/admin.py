@@ -13,7 +13,6 @@ class BookingAdmin(admin.ModelAdmin):
         "challenge",
         "time_from",
         "time_to",
-        "online_offline_time",
         "created_at",
         "updated_at",
     )

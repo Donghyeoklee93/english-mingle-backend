@@ -3,24 +3,8 @@ from . import views
 
 urlpatterns = [
     path("", views.Onlines.as_view()),
-    path("<int:pk>", views.OnlinesDetail.as_view()),
-    # path(
-    #     "",
-    #     views.OnlineViewSet.as_view(
-    #         {
-    #             "get": "list",
-    #             "post": "create",
-    #         }
-    #     ),
-    # ),
-    # path(
-    #     "<int:pk>",
-    #     views.OnlineViewSet.as_view(
-    #         {
-    #             "get": "retrieve",
-    #             "put": "partial_update",
-    #             "delete": "destroy",
-    #         },
-    #     ),
-    # ),
+    path("<int:pk>", views.OnlineDetail.as_view()),
+    path("<int:pk>/reviews", views.OnlineReviews.as_view()),
+    path("<int:pk>/photos", views.OnlinePhotos.as_view()),
+    path("<int:pk>/bookings", views.OnlineBookings.as_view()),
 ]

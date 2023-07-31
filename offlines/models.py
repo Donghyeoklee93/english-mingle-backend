@@ -5,8 +5,8 @@ from django.db import models
 class Offline(models.Model):
     name = models.CharField(
         max_length=150,
-        verbose_name="student name",
-        help_text="student's name only",
+        verbose_name="class name",
+        help_text="class name only",
     )
 
     tutor = models.ForeignKey(
@@ -28,6 +28,9 @@ class Offline(models.Model):
         blank=True,
         on_delete=models.SET_NULL,
     )
+
+    start = models.DateTimeField()
+    end = models.DateTimeField()
 
     class Meta:
         verbose_name_plural = "offline_classes"

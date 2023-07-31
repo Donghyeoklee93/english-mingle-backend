@@ -41,6 +41,9 @@ class Online(CommonModel):
         on_delete=models.SET_NULL,
     )
 
+    start = models.DateTimeField()
+    end = models.DateTimeField()
+
     def __str__(self) -> str:
         return self.name
 
