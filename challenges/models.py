@@ -26,8 +26,6 @@ class Challenge(CommonModel):
         max_length=20,
         choices=ChallengeChoices.choices,
     )
-    start = models.DateTimeField()
-    end = models.DateTimeField()
 
     subjects = models.ManyToManyField(
         "subjects.Subject",
@@ -39,6 +37,12 @@ class Challenge(CommonModel):
         blank=True,
         on_delete=models.SET_NULL,
     )
+
+    # start = models.DateTimeField()
+    # end = models.DateTimeField()
+
+    start = models.TimeField()
+    end = models.TimeField()
 
     def __str__(self) -> str:
         return self.name

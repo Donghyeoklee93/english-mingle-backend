@@ -29,8 +29,8 @@ class Offline(models.Model):
         on_delete=models.SET_NULL,
     )
 
-    start = models.DateTimeField()
-    end = models.DateTimeField()
+    # start = models.DateTimeField()
+    # end = models.DateTimeField()
 
     class Meta:
         verbose_name_plural = "offline_classes"
