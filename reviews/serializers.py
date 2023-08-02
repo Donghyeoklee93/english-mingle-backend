@@ -8,10 +8,11 @@ class ReviewSerializer(serializers.ModelSerializer):
         model = Review
         fields = (
             "pk",
-            # "user",
+            "user",
             # "online",
             # "offline",
             # "challenge",
             "textArea",
             "rating",
         )
+        depth = 1

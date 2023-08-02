@@ -12,6 +12,9 @@ python = "^3.11"
 Django = "^4.2.3"
 Pillow = "^10.0.0"
 djangorestframework = "^3.14.0"
+django-cors-headers = "^4.2.0"
+pyjwt = "^2.8.0"
+django-environ = "^0.10.0"
 
 
 [build-system]
