@@ -7,4 +7,5 @@ urlpatterns = [
     path("<int:pk>/reviews", views.OnlineReviews.as_view()),
     path("<int:pk>/photos", views.OnlinePhotos.as_view()),
     path("<int:pk>/bookings", views.OnlineBookings.as_view()),
+    path("<int:pk>/bookings/check", views.OnlineBookingCheck.as_view()),
 ]

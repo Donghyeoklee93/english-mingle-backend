@@ -179,7 +179,7 @@ class OnlinePhotos(APIView):
 
     def get_object(self, pk):
         try:
-            return Offline.objects.get(pk=pk)
+            return Online.objects.get(pk=pk)
         except:
             raise NotFound
 
@@ -244,3 +244,27 @@ class OnlineBookings(APIView):
 
         else:
             return Response(serializer.errors)
+
+
+class OnlineBookingCheck(APIView):
+    def get_object(self, pk):
+        try:
+            return Online.objects.get(pk=pk)
+        except Online.DoesNotExist:
+            raise NotFound
+
+    # have to add in offline, challege file
+    def get(self, request, pk):
+        online = self.get_object(pk)
+        time_to = request.query_params.get("time_to")
+        time_from = request.query_params.get("time_from")
+
+        exists = Booking.objects.filter(
+            online=online,
+            time_from__lte=time_to,
+            time_to__gte=time_from,
+        ).exists()
+
+        if exists:
+            return Response({"ok": False})
+        return Response({"ok": True})

@@ -10,6 +10,7 @@ class MessengerSerializer(serializers.ModelSerializer):
             "user",
             "room",
         )
+        depth = 1
 
 
 class ChattingRoomSerializer(serializers.ModelSerializer):
