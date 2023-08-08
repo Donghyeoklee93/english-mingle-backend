@@ -49,12 +49,15 @@ class ChallengeListSerializer(ModelSerializer):
             "pk",
             "name",
             # "tutor",
+            "description",
             "price",
             "kind",
             "rating",
             "is_owner",
             "reviews_count",
             "photos",
+            "start",
+            "end",
         )
 
     def get_rating(self, challenge):
@@ -68,29 +71,3 @@ class ChallengeListSerializer(ModelSerializer):
 
     def get_reviews_count(self, challenge):
         return challenge.reviews.count()
-
-
-# class ChallengeSerializer(ModelSerializer):
-#     class Meta:
-#         model = Challenge
-#         fields = "__all__"
-#         depth = 1
-
-
-# class ChallengeSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Challenge
-#         fields = (
-#             "pk",
-#             "name",
-#             "tutor",
-#             "price",
-#             "description",
-#             "kind",
-#             "start",
-#             "end",
-#             "subject",
-#             "level",
-#             "created_at",
-#             "updated_at",
-#         )

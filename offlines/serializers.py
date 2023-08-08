@@ -9,7 +9,10 @@ from medias.serializers import PhotoSerializer
 
 class OfflineDetailSerializer(ModelSerializer):
     tutor = TinyUserSerializer(read_only=True)
-    subject = SubjectSerializer(read_only=True, many=True)
+    subject = SubjectSerializer(
+        read_only=True,
+        many=True,
+    )
     level = LevelSerializer(
         read_only=True,
     )
@@ -22,7 +25,7 @@ class OfflineDetailSerializer(ModelSerializer):
     class Meta:
         model = Offline
         fields = "__all__"
-        # depth = 1
+        depth = 1
 
     def get_rating(self, offline):
         return offline.rating()
@@ -55,6 +58,9 @@ class OfflineListSerializer(ModelSerializer):
             "is_owner",
             "reviews_count",
             "photos",
+            "subjects",
+            "level",
+            "address",
         )
 
     def get_rating(self, offline):
@@ -68,19 +74,3 @@ class OfflineListSerializer(ModelSerializer):
 
     def get_reviews_count(self, offline):
         return offline.reviews.count()
-
-
-# from rest_framework import serializers
-# from .models import Offline
-
-# class OfflineSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Offline
-#         fields = (
-#             "name",
-#             "tutor",
-#             "price",
-#             "description",
-#             "subject",
-#             "level",
-#         )

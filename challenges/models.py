@@ -38,9 +38,6 @@ class Challenge(CommonModel):
         on_delete=models.SET_NULL,
     )
 
-    # start = models.DateTimeField()
-    # end = models.DateTimeField()
-
     start = models.TimeField()
     end = models.TimeField()
 

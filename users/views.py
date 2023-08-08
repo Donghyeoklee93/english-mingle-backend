@@ -126,13 +126,11 @@ class SignUp(APIView):
         username = request.data.get("username")
         password = request.data.get("password")
         password2 = request.data.get("password2")
-
         if password != password2:
             return Response(
                 {"error": "password is not the same"},
                 status=status.HTTP_400_BAD_REQUEST,
             )
-
         try:
             User.objects.get(email=email)
             return Response(
@@ -141,7 +139,6 @@ class SignUp(APIView):
             )
         except User.DoesNotExist:
             pass
-
         try:
             User.objects.get(username=username)
             return Response(
@@ -156,10 +153,8 @@ class SignUp(APIView):
             email=email,
             username=username,
         )
-
         user.set_password(password)
         user.save()
-
         login(request, user)
         return Response({"ok": "account is created!"}, status=status.HTTP_200_OK)
 

@@ -224,7 +224,6 @@ class OnlineBookings(APIView):
             bookings,
             many=True,
         )
-
         return Response(serializer.data)
 
     def post(self, request, pk):
@@ -253,7 +252,6 @@ class OnlineBookingCheck(APIView):
         except Online.DoesNotExist:
             raise NotFound
 
-    # have to add in offline, challege file
     def get(self, request, pk):
         online = self.get_object(pk)
         time_to = request.query_params.get("time_to")

@@ -4,7 +4,12 @@ from . import views
 urlpatterns = [
     path(
         "photos/get-url",
-        views.GetUploadURL.as_view(),
+        views.GetUploadURL.as_view(
+            {
+                "get": "list",
+                "post": "create",
+            }
+        ),
     ),
     path(
         "photos/<int:pk>",

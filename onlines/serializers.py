@@ -23,7 +23,7 @@ class OnlineDetailSerializer(ModelSerializer):
     class Meta:
         model = Online
         fields = "__all__"
-        # depth = 1
+        depth = 1
 
     def get_rating(self, online):
         return online.rating()
@@ -57,6 +57,7 @@ class OnlineListSerializer(ModelSerializer):
             "reviews_count",
             "photos",
         )
+        # depth: 1
 
     def get_rating(self, online):
         return online.rating()
